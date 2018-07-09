@@ -130,8 +130,8 @@ class Preset extends BasePreset
     protected static function updateProviders()
     {
         copy(__DIR__.'/stubs/Providers/AppServiceProvider.php', base_path('app/Providers/AppServiceProvider.php'));
-        copy(__DIR__.'/stubs/Providers/NavigationProvider.php', base_path('app/Providers/NavigationProvider.php'));
-        copy(__DIR__.'/stubs/Providers/RouteProvider.php', base_path('app/Providers/RouteProvider.php'));
+        copy(__DIR__.'/stubs/Providers/NavigationServiceProvider.php', base_path('app/Providers/NavigationServiceProvider.php'));
+        copy(__DIR__.'/stubs/Providers/RouteServiceProvider.php', base_path('app/Providers/RouteServiceProvider.php'));
     }
 
     protected static function updateSupport()
