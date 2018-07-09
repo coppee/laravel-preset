@@ -12,7 +12,7 @@ class PresetServiceProvider extends ServiceProvider
             Preset::install();
 
             $command->info('Coppee scaffolding installed successfully.');
-            $command->info('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
+            $command->info('Please run "yarn install && yarn watch" to compile your fresh scaffolding.');
         });
     }
 }
