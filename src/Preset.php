@@ -25,6 +25,8 @@ class Preset extends BasePreset
         static::updateRoutes();
         static::updateProviders();
         static::updateSupport();
+        static::updateConfig();
+        static::updateHttpKernel();
     }
 
     protected static function updatePackageArray(array $packages)
@@ -36,7 +38,6 @@ class Preset extends BasePreset
             "slick-carousel" => "^1.8.1",
             "jquery-match-height" => "^0.7.2",
             'laravel-mix-purgecss' => '^2.2.0',
-            'tailwindcss' => '>=0.5.3',
         ], Arr::except($packages, [
             'vue',
             'bootstrap-sass',
@@ -52,40 +53,11 @@ class Preset extends BasePreset
     {
         tap(new Filesystem, function ($files) {
             $files->deleteDirectory(resource_path('assets/sass'));
-            $files->delete(public_path('js/app.js'));
-            $files->delete(public_path('css/app.css'));
+            $files->deleteDirectory(resource_path('assets/js'));
+            $files->deleteDirectory(public_path('js'));
+            $files->deleteDirectory(public_path('css'));
 
             $files->copyDirectory(__DIR__.'/stubs/resources/assets', resource_path('assets'));
-        });
-    }
-
-    protected static function updateStyles()
-    {
-        tap(new Filesystem, function ($files) {
-            $files->deleteDirectory(resource_path('assets/sass'));
-            $files->delete(public_path('js/app.js'));
-            $files->delete(public_path('css/app.css'));
-
-            if (! $files->isDirectory($directory = resource_path('assets/Open/css'))) {
-                $files->makeDirectory($directory, 0755, true);
-            }
-        });
-
-        copy(__DIR__.'/stubs/resources/assets/css/app.css', resource_path('assets/css/app.css'));
-    }
-
-    protected static function updateJavaScript()
-    {
-        copy(__DIR__.'/stubs/app.js', resource_path('assets/Open/js/app.js'));
-        copy(__DIR__.'/stubs/bootstrap.js', resource_path('assets/Open/js/bootstrap.js'));
-    }
-
-    protected static function createComponents()
-    {
-        tap(new Filesystem, function ($files) {
-            if (! $files->isDirectory($directory = resource_path('assets/Open/components'))) {
-                $files->makeDirectory($directory, 0755, true);
-            }
         });
     }
 
@@ -141,5 +113,15 @@ class Preset extends BasePreset
                 $files->copyDirectory(__DIR__.'/stubs/Support', $directory);
             }
         });
+    }
+
+    protected static function updateConfig()
+    {
+        copy(__DIR__.'/stubs/config/app.php', base_path('config/app.php'));
+    }
+
+    protected static function updateHttpKernel()
+    {
+        copy(__DIR__.'/stubs/Http/Kernel.php', base_path('app/Http/Kernel.php'));
     }
 }
