@@ -1,0 +1,14 @@
+// components/cards
+_:-ms-fullscreen, :root .c-card--keyfact {
+	display: block;
+}
+
+_:-ms-fullscreen, :root .c-card--keyfact span {
+		﻿font-size: 3rem;
+}
+
+// components/form
+_:-ms-fullscreen, :root  select.c-form-control {
+	padding-right: 1.5rem;
+	background-image: none;
+}

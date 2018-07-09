@@ -1,0 +1,26 @@
+.u-video-thumb
+{
+	position: relative;
+	display: block;
+	margin: 0;
+	border: solid 8px $red;
+	line-height: 0;
+	outline: none;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: url('../images/video-thumb.png') no-repeat center center;
+		opacity: .5;
+		transition: opacity .2s ease-in;
+	}
+	
+	&:hover
+	{
+		&::before { opacity: .9;}
+	}
+}

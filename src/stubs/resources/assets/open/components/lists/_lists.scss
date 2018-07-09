@@ -1,0 +1,68 @@
+.c-list
+{
+	display: table;
+	border-collapse: collapse;
+	margin: 0 0 4rem;
+	padding: 0 0 0 1.5rem;
+	// font-weight: 700;
+	list-style-type: none;
+	
+	li {
+		display: table-row;
+		border-bottom: 2rem solid transparent; //margin hack
+		
+		&:last-child { border-bottom: none; }
+		
+		&::before {
+			display: table-cell;
+			padding-right: 1.5rem;
+		}
+	}
+	
+	small {
+		font-weight: 400;
+	}
+	
+	&:last-child { margin: 0; }
+}
+
+
+ul.c-list
+{
+	li
+	{
+		&::before {
+			content: "";
+			font-family: "Font Awesome 5 Free";
+			color: white;
+			font-size: 2rem;
+		}
+	}
+}
+
+ol.c-list
+{
+	counter-reset: step-counter;
+	
+	li {
+		counter-increment: step-counter;
+		
+		&::before {
+			content: counter(step-counter);
+			padding: 3px 2rem 7px 11px;
+			background: url('../images/ol-bullet.png') no-repeat;
+			color: white;
+			text-align: center;
+			vertical-align: top;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm)
+{
+	ol.c-list li::before {
+		padding: 0 1.5rem 0 0;
+		background: none;
+		color: $primary;
+	}
+}

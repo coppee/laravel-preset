@@ -1,0 +1,29 @@
+.u-text-white { color: white; }
+.u-text-dark { color: $grayDark; }
+.u-text-blue { color: $blue; }
+.u-text-green { color: $green; }
+.u-text-yellow { color: $yellow; }
+.u-text-orange { color: $orange; }
+
+.u-text-left { text-align: left; }
+.u-text-center { text-align: center; }
+.u-text-right { text-align: right; }
+
+.u-text-lowercase { text-transform: lowercase; }
+.u-text-uppercase { text-transform: uppercase; }
+.u-text-capitalize { text-transform: capitalize; }
+.u-text-transform-none { text-transform: none; }
+
+.u-font-size-05 { font-size: 0.5rem; }
+.u-font-size-075 { font-size: 0.75rem; }
+.u-font-size-1 { font-size: 1rem; }
+.u-font-size-125 { font-size: 1.25rem; line-height: 1.5rem;}
+.u-font-size-15 { font-size: 1.5rem; line-height: 1.75rem;}
+.u-font-size-2 { font-size: 2rem; }
+.u-font-size-25 { font-size: 2.5rem; }
+
+.u-font-weight-bold { font-weight: 700!important; }
+.u-font-weight-medium { font-weight: 500!important; }
+.u-font-weight-normal { font-weight: 400!important; }
+.u-font-weight-light { font-weight: 300!important; }
+.u-font-italic { font-style: italic!important; }

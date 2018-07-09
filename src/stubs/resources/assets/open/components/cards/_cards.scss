@@ -1,0 +1,77 @@
+.c-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: white;
+	// border: 1px solid rgba(0,0,0,.125);s
+	border-radius: .25rem;
+	text-align: left;
+}
+
+	.c-card--keyfact
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 15rem;
+		height: 15rem;
+		color: white;
+		border-radius: 50%;
+		background: $primary;
+		text-align: center;
+		
+		span {
+			display: block;
+			font-weight: 700;
+			font-size: 3.5rem;
+		}
+		
+		&.c-card--odd { background: $blue; }
+	}
+
+	.c-card__image {
+		width: 100%;
+		border-radius: .25rem; // calc(.25rem - 1px);
+	}
+	
+	.c-card__image-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 3rem;
+	}
+	
+		.c-card__image-overlay--bottom {
+			top: auto;
+		}
+
+	.c-card__body,
+	.c-card__footer
+	{
+		padding: 1.5rem 1.5rem 0;
+		
+		&:last-child {
+			padding-bottom: 1.5rem;
+		}
+	}
+		
+	.c-card__footer
+	{
+		//padding: 1.5rem;
+	}
+
+@include media-breakpoint-down(sm)
+{
+	.c-card--keyfact {
+		width: 10rem;
+		height: 10rem;
+		
+		span {
+			font-size: 2rem;
+		}
+	}
+}

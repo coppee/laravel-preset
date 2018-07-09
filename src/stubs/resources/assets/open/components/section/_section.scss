@@ -1,0 +1,113 @@
+// <section>
+.c-section
+{
+	position: relative;
+	padding: 4.5rem 0;
+	color: $textColor;
+}
+
+.c-section--center { text-align: center; }
+
+.c-section--sm { padding: 3rem 0; }
+
+.c-section--odd {
+	background: $grayLight;
+	color: white;
+}
+
+.c-section--full-height
+{
+	// @extend .c-section;
+	// padding: 0;
+	min-height: 100vh;
+}
+
+	.c-section__body--center
+	{
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		min-height: calc(100vh - 9rem);
+	}
+
+	// <footer>
+	.c-section__footer
+	{
+		position: absolute;
+		z-index: 1;
+		display: block;
+		bottom: 0;
+		width: 100%;
+		min-height: 6rem;
+	}
+	
+		.c-section__footer__right,
+		.c-section__footer__left {
+			position: absolute;
+			bottom: 3rem;
+			
+			line-height: 0;
+			padding: 0;
+			margin: 0;
+		}
+	
+		.c-section__footer__left { left: 3rem; }
+		.c-section__footer__right { right: 3rem; }
+
+	.c-section__next-link
+	{
+		display: block;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 120px;
+		background: url('/assets/img/bottomAngle.png') no-repeat center center;
+	}
+
+	.c-section__title
+	{
+		margin: 0 0 1rem;
+		font-size: 4rem;
+		line-height: 4.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: inherit;
+		
+		span {
+			color: $primary;
+			display: block;
+		}
+	}
+	
+	.c-section__subtitle {
+		margin: 0 0 2.5rem;
+		font-size: 3rem;
+	}
+
+	.c-section__description {
+		margin: 0 0 1.5rem;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+	
+@include media-breakpoint-down(md)
+{
+	.c-section__title {
+		font-size: 3rem;
+		line-height: 3.5rem;
+	}
+	
+	.c-section__next-link {
+		position: relative;
+		height: 80px;
+	}
+}
+
+@include media-breakpoint-down(sm)
+{
+	.c-section__title {
+		font-size: 2.5rem;
+		line-height: 3rem;
+	}
+}

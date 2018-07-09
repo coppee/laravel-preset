@@ -1,0 +1,31 @@
+// <img>
+.u-responsive-image {
+	width: 100%;
+	height: auto;
+}
+
+@include media-breakpoint-down(sm)
+{
+	.u-responsive-image--sm {
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+// <div>
+.u-responsive-video
+{
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+	
+	iframe{
+		left:0;
+		top:0;
+		height:100%;
+		width:100%;
+		position:absolute;
+	}
+}

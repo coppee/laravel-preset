@@ -1,6 +1,5 @@
 <?php
-
-namespace NothingWorks\LaravelPreset;
+namespace Coppee\LaravelPreset;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;

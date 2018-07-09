@@ -1,0 +1,42 @@
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/modal';
+
+.modal-content {
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+}
+
+.modal-body
+{
+	padding: 0;
+	line-height: 0;
+	background: $primary;
+	
+	iframe {
+		border:0;
+	}
+}
+
+.modal__close {
+	position: absolute;
+	background: transparent;
+	border: none;
+	right: -32px;
+	top: -16px;
+	color: white;
+	font-size: 3em;
+	line-height: 24px;
+	outline: none;
+	cursor: pointer;
+}
+
+@include media-breakpoint-down(md)
+{
+	.modal__close {
+		right: -8px;
+		top: -32px;
+		font-size: 5em;
+	}
+}

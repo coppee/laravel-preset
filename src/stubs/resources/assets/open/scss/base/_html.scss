@@ -1,0 +1,37 @@
+html,
+body {
+	position: relative;
+	height: 100%;
+	font-family: $bodyFont;
+	font-size: 16px;
+	color: $textColor;
+	
+	* {
+		box-sizing: border-box;
+	}
+}
+
+@include media-breakpoint-down(lg)
+{
+	html,
+	body {
+		font-size: 16px;
+	}
+}
+
+
+@include media-breakpoint-down(md)
+{
+	html,
+	body {
+		font-size: 15px;
+	}
+}
+
+@include media-breakpoint-down(sm)
+{
+	html,
+	body {
+		font-size: 14px;
+	}
+}

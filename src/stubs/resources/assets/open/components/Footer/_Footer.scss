@@ -1,0 +1,48 @@
+.Footer
+{
+	width: 100%;
+	padding: 2.5rem 0;
+	background: white;
+	color: $textColor;
+	text-align: center;
+	
+	p {
+		margin: 0 0 3.5rem;
+		
+		&:last-child { margin: 0; }
+	}
+	
+	figure {
+		padding: 0 2.5rem;
+		margin: 0 0 3.5rem;
+	}
+}
+
+.Footer__logo {
+	margin: 0;
+}
+
+.Footer__nav
+{
+	a
+	{
+		color: $red;
+		text-decoration: underline;
+		
+		&:hover { text-decoration: none; }
+		&::after {
+			content: '|';
+			color: $grayDark;
+		}
+		
+		&:last-child
+		{
+			&::after { content: none; }
+		}
+	}
+}
+
+.Footer__credits {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}

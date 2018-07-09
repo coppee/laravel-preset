@@ -1,0 +1,113 @@
+.c-button
+{
+	display: inline-block;
+	padding: 1.25rem 1.5rem;
+	border: 1px solid transparent;
+	vertical-align: middle;
+	
+	text-align: center;
+	font-weight: 400;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	// white-space: nowrap;
+	text-decoration: none;
+	text-transform: uppercase;
+	
+	user-select: none;
+	border-radius: .5rem;
+	transition:
+		color .15s ease-in-out,
+		background-color .15s ease-in-out,
+		border-color .15s ease-in-out,
+		box-shadow .15s ease-in-out;
+	
+	// Share hover and focus styles
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+	
+	&:focus,
+	&.focus {
+		outline: 0;
+		box-shadow: 0 0 0 .2rem rgba(#007bff, .25);
+	}
+	
+	// Disabled comes first so active can properly restyle
+	&.disabled,
+	&[disabled],
+	&:disabled {
+		opacity: .2;
+		box-shadow: none;
+	}
+	
+	// Opinionated: add "hand" cursor to non-disabled .btn elements
+	&:not(:disabled):not(.disabled):not([disabled]) {
+		cursor: pointer;
+	}
+}
+
+	.c-button-group--lg > .c-button,
+	.c-button--lg {
+		padding: 1rem 2rem;
+		font-size: 2rem;
+	}
+	
+	.c-button-group--sm > .c-button,
+	.c-button--sm {
+		padding: .5rem 1.25rem;
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+	
+	.c-button--block {
+		display: block;
+		width: 100%;
+	}
+	
+	// Colors
+
+	.c-button--primary
+	{
+		color: #fff;
+		background-color: $secondary;
+		border-color: $secondary;
+		
+		&:hover {
+			background-color: darken($secondary, 7.5%);
+			border-color: darken($secondary, 10%);
+		}
+	}
+	
+	.c-button--secondary {
+		color: #fff;
+		background-color: #6c757d;
+		border-color: #6c757d;
+	}
+
+	.c-button--inverse-primary {
+		color: $secondary;
+		background-color: white;
+		border-color: white;
+	}
+
+	.c-button--outline-primary {
+		color: $secondary;
+		background: transparent none;
+		border-color: $secondary;
+	}
+
+	.c-button--outline-secondary {
+		color: #6c757d;
+		background: transparent none;
+		border-color: #6c757d;
+	}
+
+@include media-breakpoint-down(sm)
+{
+	.c-button-group--lg > .c-button,
+	.c-button--lg {
+		//padding: 1rem 2rem;
+		font-size: 1.5rem;
+	}
+}

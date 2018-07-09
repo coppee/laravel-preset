@@ -1,0 +1,12 @@
+.Document {}
+
+@include media-breakpoint-down(sm)
+{
+	.Document {
+		//padding-top: 5rem;
+		
+		.view-homepage & {
+			padding-top: 0;
+		}
+	}
+}

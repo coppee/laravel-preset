@@ -1,0 +1,27 @@
+.u-animation-pop-hover
+{
+	transition: 0.2s;
+	
+	&:hover {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+	
+	&[disabled]
+	{
+		&:hover {
+			opacity: .2;
+			transform: none;
+		}
+	}
+}
+
+@include media-breakpoint-down(md)
+{
+	.u-animation-pop-hover
+	{
+		&:hover {
+			transform: none;
+		}
+	}
+}

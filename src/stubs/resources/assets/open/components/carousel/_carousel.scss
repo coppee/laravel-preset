@@ -1,0 +1,15 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.slick-dots li.slick-active button:before {
+	opacity: 1;
+	color: $grayDark;
+}
+
+.slick-dots li button:before {
+	content: '\f111';
+	font-family: 'Font Awesome 5 Free';
+	font-size: 12px;
+	color: $gray;
+	opacity: 1;
+}

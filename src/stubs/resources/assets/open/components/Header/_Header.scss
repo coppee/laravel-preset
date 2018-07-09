@@ -1,0 +1,165 @@
+.Header
+{
+	position: fixed;
+	display: flex;
+	z-index: 10;
+	right: 0;
+	top:0;
+	bottom: 0;
+	padding: 0 2.5rem;
+	text-align: center;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	// background: red;
+	transition: .1s;
+	
+	&.is-transparent,
+	.view-homepage & {
+		background: transparent;
+	}
+	
+	&.is-dark {
+		color: $textColor;
+		text-shadow: none;
+	}
+}
+
+.Header__logo
+{
+	position: absolute;
+	left: 3rem;
+	top: 0.75rem;
+	margin: 0;
+	width: 4.5rem;
+	
+	a { display: inline-block; }
+}
+
+// <nav>
+.Header__main-navigation
+{
+	text-transform: uppercase;
+	font-size: .75rem;
+	letter-spacing: .6px;
+	writing-mode: vertical-rl;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: .75rem;
+	}
+	
+	li {
+		display: inline-block;
+		margin: 0 0 4rem 0;
+		
+		&::after {
+			// content: '|';
+			// padding: 0 0 0 1.5rem;
+		}
+		
+		&:last-child {
+			margin: 0;
+			
+			&::after {
+				content: none;
+			}
+		}
+	}
+	
+	a {
+		text-decoration: none;
+		transition: color .2s ease;
+		
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+.Header__switch-language
+{
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+}
+
+.Header__responsive-navigation-toggle {
+	display: none;
+	
+	position: absolute;
+	font-size: 2rem;
+	color: white;
+	right: 1.5rem;
+	top: 1.5rem;
+}
+
+@include media-breakpoint-down(sm)
+{
+	.Header
+	{
+		display: block;
+		z-index: 10;
+		position: absolute;
+		width: 100%;
+		transition: height .4s ease-in;
+		bottom: auto;
+		padding: 4rem 0;
+		
+		&.is-open
+		{
+			background: $primary;
+			
+			.Header__main-navigation,
+			.Header__social-media-navigation,
+			.Header__switch-language { display: block; }
+		}
+	}
+	
+	.Header__logo {
+		left: 1.5rem;
+		top: 0.5rem;
+	}
+	
+	.Header__main-navigation
+	{
+		display: none;
+		// margin-bottom: 2rem;
+		writing-mode: horizontal-tb;
+		font-size: 1.25rem;
+		min-height: auto;
+		
+		ul {
+			font-size: 1.25rem;
+		}
+		
+		li {
+			display: block;
+			margin: 0 0 1.5rem;
+			&::after { content: none; }
+		}
+		
+		a {
+			&:hover {
+				color: $textColor;
+			}
+		}
+	}
+	
+	.Header__social-media-navigation {
+		display: none;
+	}
+	
+	.Header__switch-language {
+		display: none;
+		position: absolute;
+		left: 1.5rem;
+		top: 1.5rem;
+		width: 32px;
+	}
+	
+	.Header__responsive-navigation-toggle {
+		display: block;
+	}
+}

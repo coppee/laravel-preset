@@ -1,0 +1,39 @@
+h1, h2, h3, h4, h5, h6
+{
+	font-family: $headingFont;
+	font-weight: 700;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $headingFont;
+	font-weight: 700;
+}
+
+.h2 { font-size: 2.5rem; line-height: 3rem; text-transform: uppercase;}
+
+.h3 { font-size: 2rem; }
+
+.h4 {
+	font-size: 1.5rem;
+	line-height: 1.75rem;
+	text-transform: uppercase;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul, ol, p {
+	font-size: 1rem;
+	line-height: 1.25rem;
+}
+
+.list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}

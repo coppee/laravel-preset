@@ -1,0 +1,14 @@
+select.c-form-control {
+	display: inline-block;
+	// width: 100%;
+	//height: calc(2.25rem + 2px);
+	padding: 1rem 5rem 1rem 1.5rem; // padding: .375rem 1.75rem .375rem .75rem;
+	line-height: 1.5;
+	color: $textColor;
+	vertical-align: middle;
+	background: $primary url("/assets/images/icon-chevron-down.svg") no-repeat right 2rem center;
+  //background-size: 8px 10px;
+  border-radius: .5rem;
+	border:none;
+  appearance: none;
+}

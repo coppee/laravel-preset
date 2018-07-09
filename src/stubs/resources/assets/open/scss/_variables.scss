@@ -1,0 +1,28 @@
+// Colors
+$grayDark: #4A4A4A;
+$gray: #e3e3e3;
+$grayLight: #F0F0F0;
+$red: red;
+$yellow: #FFC500;
+$blue: #00B2DE;
+$green: #7ED321;
+$orange: #F5A623;
+
+$primary: $yellow;
+$secondary: $blue;
+$textColor: $grayDark;
+
+// Fonts
+$headingFont: 'Rubik', sans-serif;
+$bodyFont: 'Rubik', serif;
+
+// Measures
+$unit: 8px;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+) !default;
