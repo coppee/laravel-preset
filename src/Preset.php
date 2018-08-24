@@ -19,12 +19,11 @@ class Preset extends BasePreset
         static::updateTemplates();
         static::updateLangFiles();
         static::removeNodeModules();
-        static::updateGitignore();
-        static::updateEditorConfig();
         static::updateControllers();
         static::updateRoutes();
         static::updateProviders();
-        static::updateSupport();
+        static::addSupport();
+        static::addRepositories();
         static::updateConfig();
         static::updateHttpKernel();
     }
@@ -36,8 +35,7 @@ class Preset extends BasePreset
             "normalize.css" => "^8.0.0",
             "js-cookie" => "^2.2.0",
             "slick-carousel" => "^1.8.1",
-            "jquery-match-height" => "^0.7.2",
-            'laravel-mix-purgecss' => '^2.2.0',
+            "jquery-match-height" => "^0.7.2"
         ], Arr::except($packages, [
             'vue',
             'bootstrap-sass',
@@ -77,16 +75,6 @@ class Preset extends BasePreset
         });
     }
 
-    protected static function updateGitignore()
-    {
-        copy(__DIR__.'/stubs/gitignore-stub', base_path('.gitignore'));
-    }
-
-    protected static function updateEditorConfig()
-    {
-        copy(__DIR__.'/stubs/editorconfig-stub', base_path('.editorconfig'));
-    }
-
     protected static function updateControllers()
     {
         tap(new Filesystem, function ($files) {
@@ -106,11 +94,20 @@ class Preset extends BasePreset
         copy(__DIR__.'/stubs/Providers/RouteServiceProvider.php', base_path('app/Providers/RouteServiceProvider.php'));
     }
 
-    protected static function updateSupport()
+    protected static function addSupport()
     {
         tap(new Filesystem, function ($files) {
             if (! $files->isDirectory($directory = base_path('app/Support'))) {
                 $files->copyDirectory(__DIR__.'/stubs/Support', $directory);
+            }
+        });
+    }
+
+    protected static function addRepositories()
+    {
+        tap(new Filesystem, function ($files) {
+            if (! $files->isDirectory($directory = base_path('app/Repositories'))) {
+                $files->copyDirectory(__DIR__.'/stubs/Repositories', $directory);
             }
         });
     }

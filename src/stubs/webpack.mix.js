@@ -1,10 +1,8 @@
 let mix = require('laravel-mix')
-require('laravel-mix-purgecss')
 
 mix
   .js('resources/assets/open/js/app.js', 'public/assets/open/js')
   .sass('resources/assets/open/scss/app.scss', 'public/assets/open/css')
-  .purgeCss()
   .options({
     postCss: [
       require('autoprefixer')(),
