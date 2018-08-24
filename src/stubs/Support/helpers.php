@@ -94,3 +94,13 @@ function getVideoYoutubeThumbByVideoID($video_id, $vq='maxresdefault')
 
     return $output;
 }
+
+function gdpr_cookie_set ($type = 'analytics', $cookieName = 'cookieControlPrefs'): bool
+{
+    if(!isset($_COOKIE[$cookieName]))
+        return false;
+
+    $cookieTypes = json_decode(stripslashes($_COOKIE[$cookieName]),true);
+
+    return (in_array($type, $cookieTypes)) ? true : false;
+}
